@@ -562,6 +562,28 @@
 	color = "#DFDFDF"
 	taste_description = "mayonnaise"
 
+/datum/reagent/consumable/chocolatepudding
+	name = "Chocolate Pudding"
+	description = "A great dessert for chocolate lovers."
+	color = "#800000"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "sweet chocolate"
+	glass_icon_state = "chocolatepudding"
+	glass_name = "chocolate pudding"
+	glass_desc = "Tasty."
+
+/datum/reagent/consumable/vanillapudding
+	name = "Vanilla Pudding"
+	description = "A great dessert for vanilla lovers."
+	color = "#FAFAD2"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "sweet vanilla"
+	glass_icon_state = "vanillapudding"
+	glass_name = "vanilla pudding"
+	glass_desc = "Tasty."
+
 /datum/reagent/consumable/tearjuice
 	name = "Tear Juice"
 	description = "A blinding substance extracted from certain onions."
