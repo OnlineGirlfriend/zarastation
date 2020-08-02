@@ -385,7 +385,7 @@
 
 /datum/crafting_recipe/bouquet
 	name = "Bouquet"
-	result = /obj/item/grown/bouquet
+	result = /obj/item/bouquet
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 2,
 	/obj/item/grown/sunflower = 2,
 	/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 2)

@@ -281,9 +281,3 @@
 	if(!user.gloves)
 		to_chat(user, "<span class='danger'>The [name] burns your bare hand!</span>")
 		user.adjustFireLoss(rand(1, 5))
-
-// Bouquet
-/obj/item/grown/bouquet/
-    name = "bouquet"
-    desc = "A bouquet of sunflowers, lilies, and geraniums. How delightful."
-    icon_state = "bouquet"

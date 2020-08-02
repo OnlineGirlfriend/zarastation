@@ -1638,7 +1638,7 @@
 	contains = list(/obj/item/clothing/under/dress/wedding_dress,
 					/obj/item/clothing/under/suit/tuxedo,
 					/obj/item/storage/belt/cummerbund,
-					/obj/item/grown/bouquet,
+					/obj/item/bouquet,
 					/obj/item/reagent_containers/food/drinks/bottle/champagne)
 	crate_name = "wedding crate"
 
