@@ -11,7 +11,7 @@
 	throwforce = 15
 	volume = 100
 	amount_per_transfer_from_this = 10
-	isGlass = FALSE
+	isGlass = TRUE
 	item_flags = ABSTRACT
 
 /obj/item/reagent_containers/cup/glass/teapot/exquisite
@@ -38,7 +38,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	volume = 20
 	amount_per_transfer_from_this = 5
-	isGlass = FALSE
+	isGlass = TRUE
 	item_flags = ABSTRACT
 
 /obj/item/reagent_containers/cup/glass/teacup/exquisite
@@ -65,7 +65,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	volume = 40
 	amount_per_transfer_from_this = 5
-	isGlass = FALSE
+	isGlass = TRUE
 	item_flags = ABSTRACT
 
 /obj/item/reagent_containers/cup/glass/sugarbowl/exquisite
@@ -76,12 +76,12 @@
 /obj/item/reagent_containers/cup/glass/sugarbowl/red
 	name = "Red Sugar Bowl"
 	desc = "A red sugar bowl. Though most sugar produced in the modern age is artificially synthesised, a little presentation makes all the difference. It appears quite fragile."
-	icon_state = "sugarbowl_exquisite"
+	icon_state = "sugarbowl_red"
 
 /obj/item/reagent_containers/cup/glass/sugarbowl/china
 	name = "China Sugar Bowl"
 	desc = "A china sugar bowl with elegant blue patterns. It appears quite fragile."
-	icon_state = "sugarbowl_exquisite"
+	icon_state = "sugarbowl_china"
 
 // Milk jugs //
 
@@ -92,7 +92,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 60
 	amount_per_transfer_from_this = 5
-	isGlass = FALSE
+	isGlass = TRUE
 	item_flags = ABSTRACT
 
 /obj/item/reagent_containers/cup/glass/milkjug/exquisite
@@ -116,8 +116,30 @@
 	name = "Saucer"
 	desc = "A saucer."
 	icon = 'icons/obj/drinks/tea.dmi'
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	max_items = 1
+	max_x_offset = 2
+	max_height_offset = 2
+	biggest_w_class = WEIGHT_CLASS_TINY
+
+/obj/item/plate/saucer/attackby(obj/item/I, mob/user, params)
+	// Only allow teacups
+	if(!istype(I, /obj/item/reagent_containers/cup/glass/teacup) && !istype(I, /obj/item/reagent_containers/cup/glass/sugarbowl))
+		balloon_alert(user, "You can't set this on the saucer!")
+		return
+	if(contents.len >= max_items)
+		balloon_alert(user, "This can't fit!")
+		return
+
+	var/list/modifiers = params2list(params)
+	if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
+		return
+
+	if(user.transferItemToLoc(I, src, silent = FALSE))
+		I.pixel_x = 0
+		I.pixel_y = placement_offset
+		to_chat(user, span_notice("You gently place [I] on [src]."))
+		AddToPlate(I, user)
 
 /obj/item/plate/saucer/exquisite
 	name = "Exquisite Saucer"
