@@ -22,6 +22,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	base_icon_state = "match"
 	w_class = WEIGHT_CLASS_TINY
 	heat = 1000
+	grind_results = list(/datum/reagent/phosphorus = 2)
 	/// Whether this match has been lit.
 	var/lit = FALSE
 	/// Whether this match has burnt out.
@@ -30,9 +31,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/smoketime = 10 SECONDS
 	/// If the match is broken
 	var/broken = FALSE
-
-/obj/item/match/grind_results()
-	return list(/datum/reagent/phosphorus = 2)
 
 /obj/item/match/process(seconds_per_tick)
 	smoketime -= seconds_per_tick * (1 SECONDS)
@@ -166,9 +164,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "An unlit firebrand. It makes you wonder why it's not just called a stick."
 	smoketime = 40 SECONDS
 	custom_materials = list(/datum/material/wood = SHEET_MATERIAL_AMOUNT * 2)
-
-/obj/item/match/firebrand/grind_results()
-	return list(/datum/reagent/carbon = 2)
+	grind_results = list(/datum/reagent/carbon = 2)
 
 /obj/item/match/firebrand/Initialize(mapload)
 	. = ..()
@@ -912,9 +908,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigbutt"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
-
-/obj/item/cigbutt/grind_results()
-	return list(/datum/reagent/carbon = 2)
+	grind_results = list(/datum/reagent/carbon = 2)
 
 /obj/item/cigbutt/cigarbutt
 	name = "cigar butt"

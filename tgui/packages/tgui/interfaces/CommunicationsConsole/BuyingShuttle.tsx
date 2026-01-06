@@ -51,7 +51,7 @@ function ShuttleCard(props: ShuttleCardProps) {
   const { shuttle } = props;
 
   const { act, data } = useBackend<CommsConsoleData>();
-  const { budget, displayed_currency_name, displayed_currency_full_name} = data;
+  const { budget } = data;
 
   return (
     <Section
@@ -76,14 +76,14 @@ function ShuttleCard(props: ShuttleCardProps) {
           }
           tooltip={
             budget < shuttle.creditCost
-              ? `You need ${shuttle.creditCost - budget} more ${displayed_currency_full_name}.`
+              ? `You need ${shuttle.creditCost - budget} more credits.`
               : shuttle.emagOnly
                 ? EMAG_SHUTTLE_NOTICE
                 : undefined
           }
           tooltipPosition="left"
         >
-          {shuttle.emagOnly ? 'Buy' : `${shuttle.creditCost} ${displayed_currency_name}`}
+          {shuttle.emagOnly ? 'Buy' : 'Purchase'}
         </Button>
       }
     >

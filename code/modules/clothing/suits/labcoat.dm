@@ -41,7 +41,7 @@
 
 /obj/item/clothing/suit/toggle/labcoat/cmo/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/adjust_fishing_difficulty, -3) //FISH DOCTOR?!
+	AddComponent(/datum/component/adjust_fishing_difficulty, -3) //FISH DOCTOR?!
 
 /datum/armor/toggle_labcoat
 	bio = 50
@@ -62,7 +62,7 @@
 
 /obj/item/clothing/suit/toggle/labcoat/paramedic/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/adjust_fishing_difficulty, -3) //FISH DOCTOR?!
+	AddComponent(/datum/component/adjust_fishing_difficulty, -3) //FISH DOCTOR?!
 	allowed += /obj/item/crowbar/power/paramedic
 
 /obj/item/clothing/suit/toggle/labcoat/mad

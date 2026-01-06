@@ -13,7 +13,6 @@
 	sight = SEE_TURFS
 	speed = 1
 	ai_controller = /datum/ai_controller/basic_controller/rust_walker
-	mob_biotypes = MOB_ROBOTIC|MOB_MINERAL
 
 /mob/living/basic/heretic_summon/rust_walker/Initialize(mapload)
 	. = ..()
@@ -39,7 +38,7 @@
 		icon_state = "[base_icon_state]_s"
 	icon_living = icon_state
 
-/mob/living/basic/heretic_summon/rust_walker/Life(seconds_per_tick = SSMOBS_DT)
+/mob/living/basic/heretic_summon/rust_walker/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	. = ..()
 	if(!.) //dead or deleted
 		return

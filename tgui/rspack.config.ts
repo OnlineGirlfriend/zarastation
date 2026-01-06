@@ -99,7 +99,7 @@ export default defineConfig({
     emitOnErrors: false,
   },
   output: {
-    path: path.resolve(dirname, 'public'),
+    path: 'public',
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
     chunkLoadTimeout: 15000,
@@ -116,10 +116,6 @@ export default defineConfig({
     }),
     new rspack.EnvironmentPlugin({
       NODE_ENV: 'production',
-    }),
-    new rspack.CircularDependencyRspackPlugin({
-      failOnError: true,
-      exclude: /node_modules/,
     }),
   ],
   resolve: {

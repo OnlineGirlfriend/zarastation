@@ -159,22 +159,15 @@ GLOBAL_LIST_INIT(specific_fish_icons, generate_specific_fish_icons())
 /datum/fish_source/proc/on_start_fishing(obj/item/fishing_rod/rod, mob/fisherman, atom/parent)
 	return
 
-/**
- * Calculates the difficulty of the minigame:
- *
- * This includes the source's fishing difficulty, that of the fish, the rod,
- * favorite and disliked baits, fish traits and the fisherman skill.
- *
- * This is the version to call while we are in the fishing minigame phase.
- */
-/datum/fish_source/proc/calculate_difficulty_minigame(datum/fishing_challenge/challenge, reward_path, obj/item/fishing_rod/rod, mob/fisherman)
+///Comsig proc from the fishing minigame for 'calculate_difficulty'
+/datum/fish_source/proc/calculate_difficulty_minigame(datum/fishing_challenge/challenge, reward_path, obj/item/fishing_rod/rod, mob/fisherman, list/difficulty_holder)
+	SIGNAL_HANDLER
 	SHOULD_NOT_OVERRIDE(TRUE)
-	. = 0 // begin with a fresh calculation each time
-	. += calculate_difficulty(reward_path, rod, fisherman)
+	difficulty_holder[1] += calculate_difficulty(reward_path, rod, fisherman)
 
 	// Difficulty modifier added by the fisher's skill level
 	if(!(challenge.special_effects & FISHING_MINIGAME_RULE_NO_EXP))
-		. += fisherman.mind?.get_skill_modifier(/datum/skill/fishing, SKILL_VALUE_MODIFIER)
+		difficulty_holder[1] += fisherman.mind?.get_skill_modifier(/datum/skill/fishing, SKILL_VALUE_MODIFIER)
 
 	if(challenge.special_effects & FISHING_MINIGAME_RULE_KILL)
 		challenge.RegisterSignal(src, COMSIG_FISH_SOURCE_REWARD_DISPENSED, TYPE_PROC_REF(/datum/fishing_challenge, hurt_fish))

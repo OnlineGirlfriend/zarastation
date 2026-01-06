@@ -34,7 +34,7 @@
 	QDEL_NULL(our_jaunt)
 	QDEL_NULL(terrorize_spell)
 
-/obj/item/organ/brain/shadow/nightmare/on_life(seconds_per_tick)
+/obj/item/organ/brain/shadow/nightmare/on_life(seconds_per_tick, times_fired)
 	. = ..()
 
 	var/turf/owner_turf = owner.loc
@@ -125,7 +125,7 @@
 /obj/item/organ/heart/nightmare/Stop()
 	return FALSE
 
-/obj/item/organ/heart/nightmare/on_death(seconds_per_tick)
+/obj/item/organ/heart/nightmare/on_death(seconds_per_tick, times_fired)
 	if(!owner)
 		return
 	var/turf/T = get_turf(owner)

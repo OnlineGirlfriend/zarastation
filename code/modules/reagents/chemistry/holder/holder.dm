@@ -338,8 +338,6 @@
 	include_source_subtypes = FALSE,
 	keep_data = FALSE,
 )
-	if(!total_volume)
-		return FALSE
 	if(!ispath(source_reagent_typepath))
 		stack_trace("invalid reagent path passed to convert reagent [source_reagent_typepath]")
 		return FALSE

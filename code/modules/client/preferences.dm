@@ -256,12 +256,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/default_value = read_preference(requested_preference.type)
 
 			// Yielding
-			var/new_color = tgui_color_picker(
+			var/new_color = input(
 				usr,
 				"Select new color",
 				null,
 				default_value || COLOR_WHITE,
-			)
+			) as color | null
 
 			if (!new_color)
 				return FALSE

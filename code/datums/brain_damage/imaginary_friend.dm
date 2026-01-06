@@ -20,7 +20,7 @@
 	make_friend()
 	get_ghost()
 
-/datum/brain_trauma/special/imaginary_friend/on_life(seconds_per_tick)
+/datum/brain_trauma/special/imaginary_friend/on_life(seconds_per_tick, times_fired)
 	if(get_dist(owner, friend) > 9)
 		friend.recall()
 	if(!friend)

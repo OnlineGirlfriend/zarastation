@@ -14853,11 +14853,11 @@
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 4
 	},
+/obj/machinery/digital_clock/directional/east,
 /obj/structure/bed/medical{
 	dir = 4
 	},
 /obj/item/bedsheet/medical,
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "ckV" = (
@@ -19832,7 +19832,7 @@
 	fax_name = "Chief Engineer's Office";
 	name = "Chief Engineer's Fax Machine"
 	},
-/obj/item/disk/computer/engineering,
+/obj/item/computer_disk/engineering,
 /obj/structure/table/reinforced/rglass,
 /turf/open/floor/carpet/orange,
 /area/station/command/heads_quarters/ce)
@@ -24174,9 +24174,6 @@
 /obj/effect/turf_decal/siding/dark/end{
 	dir = 8
 	},
-/obj/machinery/vitals_reader/directional/west{
-	id_tag = "uppercryo"
-	},
 /turf/open/floor/iron/dark/small,
 /area/station/medical/cryo)
 "dDn" = (
@@ -27416,7 +27413,7 @@
 "eci" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/maintenance/glass{
-	name = "Auxiliary Dock Maintenance"
+	name = "Auxiliry Dock Maintainence"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -32134,14 +32131,14 @@
 	},
 /obj/effect/mapping_helpers/requests_console/assistance,
 /obj/effect/mapping_helpers/requests_console/information,
-/obj/item/disk/computer{
+/obj/item/computer_disk{
 	pixel_x = -5;
 	pixel_y = 8
 	},
-/obj/item/disk/computer{
+/obj/item/computer_disk{
 	pixel_y = 1
 	},
-/obj/item/disk/computer/ordnance{
+/obj/item/computer_disk/ordnance{
 	pixel_x = 4;
 	pixel_y = 6
 	},
@@ -35289,9 +35286,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment{
 	dir = 6
-	},
-/obj/machinery/vitals_reader/directional/west{
-	id_tag = "lowercryo"
 	},
 /turf/open/floor/iron/dark/small,
 /area/station/medical/cryo)
@@ -50313,7 +50307,6 @@
 	dir = 1
 	},
 /obj/machinery/digital_clock/directional/south,
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/surgery/theatre)
 "hud" = (
@@ -60915,7 +60908,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance/glass{
-	name = "Auxiliary Dock Storage Room"
+	name = "Auxiliry Dock Storage Room"
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /obj/effect/mapping_helpers/airlock/unres/delayed{
@@ -75520,7 +75513,6 @@
 /obj/machinery/computer/operating{
 	dir = 1
 	},
-/obj/machinery/vitals_reader/directional/west,
 /turf/open/floor/iron/showroomfloor,
 /area/station/medical/surgery/theatre)
 "lfV" = (
@@ -75772,7 +75764,7 @@
 "lib" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/maintenance/glass{
-	name = "Auxiliary Dock Maintenance"
+	name = "Auxiliry Dock Maintainence"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -78165,17 +78157,16 @@
 "lAm" = (
 /obj/machinery/defibrillator_mount/directional/south,
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted,
+/obj/machinery/digital_clock/directional/east,
 /obj/structure/bed/medical{
 	dir = 4
 	},
 /obj/item/bedsheet/medical,
-/obj/machinery/vitals_reader/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "lAq" = (
 /obj/machinery/cryo_cell{
-	dir = 4;
-	id_tag = "lowercryo"
+	dir = 4
 	},
 /obj/effect/turf_decal/bot_white{
 	color = "#52B4E9"
@@ -95280,17 +95271,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
-"ogk" = (
-/obj/machinery/cryo_cell{
-	dir = 4;
-	id_tag = "uppercryo"
-	},
-/obj/effect/turf_decal/bot_white{
-	color = "#52B4E9"
-	},
-/obj/structure/sign/warning/cold_temp/directional/west,
-/turf/open/floor/iron/dark/textured,
-/area/station/medical/cryo)
 "ogl" = (
 /obj/structure/fluff/paper,
 /obj/structure/sign/poster/random/directional/south,
@@ -101373,7 +101353,7 @@
 	pixel_y = 6;
 	pixel_x = -5
 	},
-/obj/item/disk/computer/medical,
+/obj/item/computer_disk/medical,
 /obj/machinery/requests_console/directional/south{
 	department = "Chief Medical Officer's Desk";
 	name = "Chief Medical Officer's Requests Console"
@@ -105352,7 +105332,7 @@
 "pzT" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/maintenance/glass{
-	name = "Auxiliary Dock Maintenance"
+	name = "Auxiliry Dock Maintainence"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -115398,7 +115378,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance/glass{
-	name = "Auxiliary Dock Maintenance"
+	name = "Auxiliry Dock Maintainence"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -118283,9 +118263,6 @@
 	},
 /obj/item/bedsheet/medical{
 	dir = 4
-	},
-/obj/machinery/digital_clock/directional/north{
-	pixel_y = 36
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
@@ -144177,7 +144154,7 @@
 	pixel_y = 3;
 	pixel_x = -2
 	},
-/obj/item/disk/computer/ordnance{
+/obj/item/computer_disk/ordnance{
 	pixel_y = 2;
 	pixel_x = 4
 	},
@@ -254398,7 +254375,7 @@ aqQ
 gyf
 nHB
 dCZ
-ogk
+lAq
 tMT
 lAq
 fjZ

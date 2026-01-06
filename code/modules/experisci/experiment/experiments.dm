@@ -348,7 +348,7 @@
 	. = ..()
 	if (!.)
 		return
-	if(!LAZYLEN(check.dna.mutations))
+	if(!check.dna.mutations.len)
 		return FALSE
 	return TRUE
 

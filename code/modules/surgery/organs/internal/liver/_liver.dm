@@ -16,6 +16,7 @@
 	decay_factor = STANDARD_ORGAN_DECAY // smack in the middle of decay times
 
 	food_reagents = list(/datum/reagent/consumable/nutriment/organ_tissue = 5, /datum/reagent/iron = 5)
+	grind_results = list(/datum/reagent/consumable/nutriment/peptides = 5)
 
 	cell_line = CELL_LINE_ORGAN_LIVER
 	cells_minimum = 1
@@ -36,9 +37,6 @@
 	// Don't think about it too much.
 	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_COMEDY_METABOLISM), PROC_REF(on_add_comedy_metabolism))
 	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_COMEDY_METABOLISM), PROC_REF(on_remove_comedy_metabolism))
-
-/obj/item/organ/liver/grind_results()
-	return list(/datum/reagent/consumable/nutriment/peptides = 5)
 
 /* Signal handler for the liver gaining the TRAIT_COMEDY_METABOLISM trait
  *
@@ -81,7 +79,7 @@
  *
  * NOTE: If you return COMSIG_MOB_STOP_REAGENT_TICK, that reagent will not be removed like normal! You must handle it manually.
  **/
-/obj/item/organ/liver/proc/handle_chemical(mob/living/carbon/organ_owner, datum/reagent/chem, seconds_per_tick)
+/obj/item/organ/liver/proc/handle_chemical(mob/living/carbon/organ_owner, datum/reagent/chem, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
 
 /obj/item/organ/liver/examine(mob/user)
@@ -128,15 +126,15 @@
 			continue
 		ADD_TRAIT(replacement, readded_trait, JOB_TRAIT)
 
-/obj/item/organ/liver/on_life(seconds_per_tick)
+/obj/item/organ/liver/on_life(seconds_per_tick, times_fired)
 	. = ..()
 	//If your liver is failing, then we use the liverless version of metabolize
 	if((organ_flags & ORGAN_FAILING) || HAS_TRAIT(owner, TRAIT_LIVERLESS_METABOLISM))
 		owner.reagents.end_metabolization(keep_liverless = TRUE)
-		owner.reagents.metabolize(owner, seconds_per_tick, can_overdose = TRUE, liverless = TRUE)
+		owner.reagents.metabolize(owner, seconds_per_tick, times_fired, can_overdose = TRUE, liverless = TRUE)
 		return
 
-	owner.reagents?.metabolize(owner, seconds_per_tick, can_overdose = TRUE)
+	owner.reagents?.metabolize(owner, seconds_per_tick, times_fired, can_overdose = TRUE)
 
 /obj/item/organ/liver/handle_failing_organs(seconds_per_tick)
 	if(HAS_TRAIT(owner, TRAIT_STABLELIVER) || HAS_TRAIT(owner, TRAIT_LIVERLESS_METABOLISM))
@@ -297,7 +295,7 @@
 	foodtype_flags = PODPERSON_ORGAN_FOODTYPES
 	color = COLOR_LIME
 
-/obj/item/organ/liver/pod/handle_chemical(mob/living/carbon/organ_owner, datum/reagent/chem, seconds_per_tick)
+/obj/item/organ/liver/pod/handle_chemical(mob/living/carbon/organ_owner, datum/reagent/chem, seconds_per_tick, times_fired)
 	. = ..()
 	if((. & COMSIG_MOB_STOP_REAGENT_TICK) || (organ_flags & ORGAN_FAILING))
 		return
@@ -324,7 +322,7 @@
 	organ_owner.remove_movespeed_modifier(/datum/movespeed_modifier/snail)
 	organ_owner.RemoveElement(/datum/element/lube_walking, require_resting = TRUE)
 
-/obj/item/organ/liver/snail/handle_chemical(mob/living/carbon/organ_owner, datum/reagent/chem, seconds_per_tick)
+/obj/item/organ/liver/snail/handle_chemical(mob/living/carbon/organ_owner, datum/reagent/chem, seconds_per_tick, times_fired)
 	. = ..()
 	if((. & COMSIG_MOB_STOP_REAGENT_TICK) || (organ_flags & ORGAN_FAILING))
 		return
@@ -356,7 +354,7 @@
 	toxTolerance = LIVER_DEFAULT_TOX_TOLERANCE + 1
 	liver_resistance = 1.1 * LIVER_DEFAULT_TOX_RESISTANCE
 
-/obj/item/organ/liver/bloody/on_life(seconds_per_tick)
+/obj/item/organ/liver/bloody/on_life(seconds_per_tick, times_fired)
 	. = ..()
 
 	owner.adjust_blood_volume(4 * seconds_per_tick, maximum = BLOOD_VOLUME_NORMAL)
@@ -377,7 +375,7 @@
 	/// What to convert stuff into
 	var/convert_into = /datum/reagent/consumable/ethanol
 
-/obj/item/organ/liver/distillery/on_life(seconds_per_tick)
+/obj/item/organ/liver/distillery/on_life(seconds_per_tick, times_fired)
 	. = ..()
 
 	for(var/datum/reagent/reagent as anything in owner.reagents.reagent_list)

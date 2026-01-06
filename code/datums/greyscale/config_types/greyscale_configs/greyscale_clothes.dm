@@ -416,7 +416,6 @@
 /datum/greyscale_config/slacks/worn
 	name = "Slacks (Worn)"
 	icon_file = 'icons/mob/clothing/under/shorts_pants_shirts.dmi'
-	json_config = 'code/datums/greyscale/json_configs/slacks_worn.json'
 
 /datum/greyscale_config/shorts
 	name = "Shorts"
@@ -435,7 +434,6 @@
 /datum/greyscale_config/jeans/worn
 	name = "Jeans (Worn)"
 	icon_file = 'icons/mob/clothing/under/shorts_pants_shirts.dmi'
-	json_config = 'code/datums/greyscale/json_configs/jeans_worn.json'
 
 /datum/greyscale_config/jeanshorts
 	name = "Jean Shorts"

@@ -78,7 +78,7 @@
 		untexture_limb(owner, bodypart)
 	owner.update_body()
 
-/datum/brain_trauma/voided/on_life(seconds_per_tick)
+/datum/brain_trauma/voided/on_life(seconds_per_tick, times_fired)
 	. = ..()
 
 	if(prob(vomit_frequency))

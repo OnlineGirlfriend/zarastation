@@ -136,7 +136,6 @@ export function FeatureIconnedDropdownInput(props: IconnedDropdownInputProps) {
       options={dropdownOptions}
       selected={value}
       width="100%"
-      menuWidth="max-content"
     />
   );
 }

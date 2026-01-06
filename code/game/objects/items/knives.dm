@@ -47,7 +47,7 @@
 ///Adds the butchering component, used to override stats for special cases
 /obj/item/knife/proc/set_butchering()
 	AddComponent(/datum/component/butchering, \
-	speed = 9 SECONDS - force * 2, \
+	speed = 8 SECONDS - force, \
 	effectiveness = 100, \
 	bonus_modifier = force - 10, \
 	)
@@ -134,7 +134,7 @@
 
 /obj/item/knife/hunting/set_butchering()
 	AddComponent(/datum/component/butchering, \
-	speed = 9 SECONDS - force * 2, \
+	speed = 8 SECONDS - force, \
 	effectiveness = 100, \
 	bonus_modifier = force + 10, \
 	)

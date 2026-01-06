@@ -10,8 +10,7 @@
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 6
-	///Can this extract still be grinded
-	var/can_grind = TRUE
+	grind_results = list(/datum/reagent/toxin/slimejelly = 20)
 	///uses before it goes inert
 	var/extract_uses = 1
 	///deletion timer, for delayed reactions
@@ -20,9 +19,6 @@
 	var/crossbreed_modification
 	///Reagents required for activation
 	var/recurring = FALSE
-
-/obj/item/slime_extract/grind_results()
-	return can_grind ? list(/datum/reagent/toxin/slimejelly = 20) : list()
 
 /obj/item/slime_extract/examine(mob/user)
 	. = ..()

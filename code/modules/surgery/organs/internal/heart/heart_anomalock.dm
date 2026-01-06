@@ -97,7 +97,7 @@
 	if(core)
 		return attack(user, user, modifiers)
 
-/obj/item/organ/heart/cybernetic/anomalock/on_life(seconds_per_tick)
+/obj/item/organ/heart/cybernetic/anomalock/on_life(seconds_per_tick, times_fired)
 	. = ..()
 	if(!core)
 		return
@@ -107,7 +107,7 @@
 	if(owner.health <= owner.crit_threshold)
 		activate_survival(owner)
 
-	if(SSmobs.times_fired % (1 SECONDS))
+	if(times_fired % (1 SECONDS))
 		return
 
 	var/list/batteries = list()

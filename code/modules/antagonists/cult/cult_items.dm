@@ -13,7 +13,6 @@
 	icon = 'icons/obj/weapons/khopesh.dmi'
 	icon_state = "render"
 	inhand_icon_state = "cultdagger"
-	worn_icon = null
 	worn_icon_state = "render"
 	icon_angle = -45
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -89,7 +88,6 @@ Striking a noncultist, however, will tear their flesh."}
 	icon = 'icons/obj/weapons/sword.dmi'
 	icon_state = "cultblade"
 	inhand_icon_state = "cultblade"
-	worn_icon = 'icons/mob/clothing/back.dmi'
 	worn_icon_state = "cultblade"
 	icon_angle = -45
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'

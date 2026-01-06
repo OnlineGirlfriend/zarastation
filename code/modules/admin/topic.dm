@@ -96,11 +96,11 @@
 					return
 				switch(SSshuttle.emergency.mode)
 					if(SHUTTLE_CALL)
-						SSshuttle.cancel_evac(usr) // note that this does provide logging/feedback of its own but it's better for backcompatibility to retain the following logging lines
+						SSshuttle.emergency.cancel()
 						log_admin("[key_name(usr)] sent the Emergency Shuttle back.")
 						message_admins(span_adminnotice("[key_name_admin(usr)] sent the Emergency Shuttle back."))
 					else
-						SSshuttle.emergency.request()
+						SSshuttle.emergency.cancel()
 						log_admin("[key_name(usr)] called the Emergency Shuttle.")
 						message_admins(span_adminnotice("[key_name_admin(usr)] called the Emergency Shuttle to the station."))
 

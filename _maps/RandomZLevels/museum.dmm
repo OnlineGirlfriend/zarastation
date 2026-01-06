@@ -5535,7 +5535,7 @@
 "Ux" = (
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
 /obj/structure/table,
-/obj/item/disk/computer{
+/obj/item/computer_disk{
 	name = "plant data disk";
 	icon_state = "datadisk_hydro"
 	},

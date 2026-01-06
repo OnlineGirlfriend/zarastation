@@ -20,7 +20,7 @@
 	if(!theme_app)
 		return FALSE
 	//don't get the same one twice
-	if(LAZYFIND(theme_app.imported_themes, theme_name))
+	if(theme_app.imported_themes.Find(theme_name))
 		return FALSE
 	return TRUE
 
@@ -30,7 +30,7 @@
 	//add the theme to the computer and increase its size to match
 	var/datum/computer_file/program/themeify/theme_app = locate() in computer.stored_files
 	if(theme_app)
-		LAZYADD(theme_app.imported_themes, theme_name)
+		theme_app.imported_themes += theme_name
 		theme_app.size += size
 		qdel(src)
 

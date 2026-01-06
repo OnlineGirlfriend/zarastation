@@ -639,7 +639,7 @@
 	if(emagged_reagents != null && !emagged_reagents.len)
 		emagged_reagents = drink_emagged_reagents
 	. = ..()
-	AddElement(/datum/element/simple_rotation)
+	AddComponent(/datum/component/simple_rotation)
 
 /obj/machinery/chem_dispenser/drinks/setDir()
 	var/old = dir

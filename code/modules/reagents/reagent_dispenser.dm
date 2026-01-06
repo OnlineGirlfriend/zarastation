@@ -653,7 +653,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/reagent_dispensers/wall/virusfood, 30
 
 /obj/structure/reagent_dispensers/plumbed/storage/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/simple_rotation)
+	AddComponent(/datum/component/simple_rotation)
 
 
 /obj/structure/reagent_dispensers/plumbed/storage/update_overlays()
