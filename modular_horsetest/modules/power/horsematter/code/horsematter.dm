@@ -16,4 +16,4 @@
 	icon_state = "hm"
 
 // Because of the way the supermatter code is written, we don't need to change anything else as long as our icons have the correct suffix.
-// Refer to tg's supermatter.dm to see how that works.
+// Refer to tg's supermatter. dm for more info.
