@@ -50,6 +50,20 @@
 	ideal_speed = 75
 	rarity = 3 // Pretty common
 
+/datum/horse_breed/donkey
+	name = "Donkey"
+	description = "A hardy little relative of the horse. Donkeys are known for their stubbornness, but they make excellent companions."
+	min_temperament = 20
+	max_temperament = 40
+	min_intelligence = 70 // Donkeys are VERY smart
+	max_intelligence = 95
+	min_speed = 20
+	max_speed = 45
+	ideal_temperament = 25
+	ideal_intelligence = 80
+	ideal_speed = 45
+	rarity = 4
+
 /datum/horse_breed/morgan
 	name = "Morgan"
 	description = "A versatile breed with an incredible disposition. Morgans make for loyal and courageous friends."
