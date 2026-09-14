@@ -8,12 +8,12 @@
 
 // I also personally think it would be sick and cool if you could somehow tame the horsematter (with atmos magic?) to obtain a legendary.
 
+// Because of the way the supermatter code is written, we don't need to change anything else as long as our icons have the correct suffix.
+// Refer to tg's supermatter. dm for more info.
+
 // Override below.
 
 /obj/machinery/power/supermatter_crystal
 	icon = 'modular_horsetest/modules/power/horsematter/icons/horsematter.dmi'
 	base_icon_state = "hm"
 	icon_state = "hm"
-
-// Because of the way the supermatter code is written, we don't need to change anything else as long as our icons have the correct suffix.
-// Refer to tg's supermatter. dm for more info.
